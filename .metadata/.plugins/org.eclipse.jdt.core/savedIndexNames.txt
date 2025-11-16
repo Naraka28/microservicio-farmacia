@@ -88,7 +88,6 @@ INDEX VERSION 1.134+/Users/danielestrada/microservicio_farmacia/.metadata/.plugi
 1539024807.index
 2522308053.index
 1041035856.index
-4170326764.index
 2852112861.index
 1940922656.index
 3068095403.index

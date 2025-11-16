@@ -6,11 +6,12 @@ import com.app.models.entity.Producto;
 
 public interface IProductoService {
     public List<Producto> findAll();
+    
 	public Producto findBy(Long id);
 
-    public Producto create(Producto cliente);
+    public Producto create(Producto producto);
     
-    public Producto edit(Producto cliente);
+    public Producto edit(Producto producto);
     
     public Producto delete(Long id);
     

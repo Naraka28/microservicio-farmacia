@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: farmacia-clientes-service
+          uri: lb://farmacia-clientes-service
+          predicates:
+            - Path=/api/clientes/**
+          filters:
+            - StripPrefix=2
+        - id: farmacia-productos-service
+          uri: lb://servicio-items
+          predicates:
+            - Path=/api/items/**
+          filters:
+            - StripPrefix=2
+        - id: farmacia-ventas-service
+          uri: lb://farmacia-ventas-service
+          predicates:
+            - Path=/api/items/**
+          filters:
+            - StripPrefix=2
