@@ -1,0 +1,61 @@
+package com.app.models.service;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.app.models.dao.ClienteDao;
+import com.app.models.entity.Cliente;
+
+@Service
+public class ClienteServiceImpl implements IClienteService{
+	
+	@Autowired
+	private ClienteDao clienteDao;
+
+	@Override
+	public List<Cliente> findAll() {
+		
+		return (List<Cliente>)clienteDao.findAll();
+	}
+
+	@Override
+	public Cliente findById(Long id) {
+		
+		return clienteDao.findById(id).orElseThrow(() -> new RuntimeException("Cliente no encontrado"));
+	}
+
+	@Override
+	@Transactional
+	public Cliente create(Cliente cliente) {
+		return clienteDao.save(cliente);
+	}
+
+	@Override
+	public Cliente edit(Cliente cliente) {
+		return clienteDao.save(cliente);
+	}
+
+	@Override
+	public Cliente delete(Long id) {
+		Cliente c = clienteDao.findById(id).orElseThrow(() -> new RuntimeException("Cliente no encontrado"));
+		clienteDao.delete(c);
+		return c;
+	}
+
+	@Override
+	public List<Cliente> findByName(String name) {
+		return clienteDao.findByNombreContainingIgnoreCase(name);
+	}
+
+	@Override
+	public List<Cliente> findByEdad(int edad) {
+		// TODO Auto-generated method stub
+		return clienteDao.findByEdad(edad);
+	}
+
+
+}

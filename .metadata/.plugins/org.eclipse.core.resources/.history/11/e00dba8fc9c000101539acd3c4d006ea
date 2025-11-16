@@ -1,0 +1,7 @@
+package com.app.models.dao;
+
+import org.springframework.data.repository.CrudRepository;
+
+public class ClienteDao extends CrudRepository<Cliente, Long>{
+
+}

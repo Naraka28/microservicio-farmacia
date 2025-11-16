@@ -1,0 +1,57 @@
+package com.app.models.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.app.models.entity.Cliente;
+
+@Service
+public class ClienteServiceImpl implements IClienteService{
+
+	@Override
+	public List<Cliente> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Cliente findById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Cliente create(Cliente Cliente) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Cliente edit(Cliente Cliente) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Cliente delete(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Cliente> findByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Cliente> findByEdad(int edad) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+	
+
+}

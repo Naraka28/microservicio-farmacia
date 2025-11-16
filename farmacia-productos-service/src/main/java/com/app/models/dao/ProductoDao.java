@@ -1,0 +1,13 @@
+package com.app.models.dao;
+
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.app.models.entity.Producto;
+
+public interface ProductoDao extends CrudRepository<Producto, Long>{
+
+	List<Producto> findByNombreContainingIgnoreCase(String nombre);
+
+}

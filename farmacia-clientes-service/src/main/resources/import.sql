@@ -1,0 +1,10 @@
+INSERT INTO clientes (nombre, apellido, email, telefono, direccion, fecha_nacimiento) VALUES ('Carlos', 'Ramírez', 'carlos.ramirez@example.com', '555-123-4567', 'Av. Reforma 123, CDMX', '1985-03-12');
+INSERT INTO clientes (nombre, apellido, email, telefono, direccion, fecha_nacimiento) VALUES ('María', 'López', 'maria.lopez@example.com', '555-234-5678', 'Calle Hidalgo 45, Guadalajara', '1990-07-25');
+INSERT INTO clientes (nombre, apellido, email, telefono, direccion, fecha_nacimiento) VALUES ('Juan', 'García', 'juan.garcia@example.com', '555-345-6789', 'Boulevard del Sol 89, Monterrey', '1982-11-05');
+INSERT INTO clientes (nombre, apellido, email, telefono, direccion, fecha_nacimiento) VALUES ('Ana', 'Hernández', 'ana.hernandez@example.com', '555-456-7890', 'Cerrada de Las Flores 12, Puebla', '1995-01-18');
+INSERT INTO clientes (nombre, apellido, email, telefono, direccion, fecha_nacimiento) VALUES ('Luis', 'Martínez', 'luis.martinez@example.com', '555-567-8901', 'Colonia Centro 99, Toluca', '1988-09-30');
+INSERT INTO clientes (nombre, apellido, email, telefono, direccion, fecha_nacimiento) VALUES ('Paola', 'Sánchez', 'paola.sanchez@example.com', '555-678-9012', 'Privada Robles 8, Querétaro', '1993-04-10');
+INSERT INTO clientes (nombre, apellido, email, telefono, direccion, fecha_nacimiento) VALUES ('Ricardo', 'Torres', 'ricardo.torres@example.com', '555-789-0123', 'Fraccionamiento Las Palmas 21, Mérida', '1980-02-17');
+INSERT INTO clientes (nombre, apellido, email, telefono, direccion, fecha_nacimiento) VALUES ('Fernanda', 'Castillo', 'fernanda.castillo@example.com', '555-890-1234', 'Av. Insurgentes 200, CDMX', '1998-12-09');
+INSERT INTO clientes (nombre, apellido, email, telefono, direccion, fecha_nacimiento) VALUES ('Miguel', 'Vázquez', 'miguel.vazquez@example.com', '555-901-2345', 'Villa del Río 33, León', '1986-06-22');
+INSERT INTO clientes (nombre, apellido, email, telefono, direccion, fecha_nacimiento) VALUES ('Sofía', 'Mendoza', 'sofia.mendoza@example.com', '555-012-3456', 'Zona Norte 15, Tijuana', '1992-10-14');

@@ -1,0 +1,18 @@
+package com.app.models.dao;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+import com.app.models.entity.Cliente;
+
+import org.springframework.data.repository.query.Param;
+
+public interface ClienteDao extends CrudRepository<Cliente, Long>{
+	List<Cliente> findByNombreContainingIgnoreCase(String nombre);
+	
+//	@Query("SELECT c FROM Clientes c WHERE YEAR(CURRENT_DATE) - YEAR(c.fechaNacimiento) = :edad")
+//    List<Cliente> findByEdad(@Param("edad") int edad);
+
+}

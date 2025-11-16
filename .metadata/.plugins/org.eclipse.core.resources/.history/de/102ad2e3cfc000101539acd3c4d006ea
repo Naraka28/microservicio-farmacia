@@ -1,0 +1,78 @@
+package com.app.controllers;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.app.models.entity.Cliente;
+import com.app.models.service.IClienteService;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+
+
+@RestController
+public class ClienteController {
+	@Autowired
+    private IClienteService clienteService;
+	
+	@Autowired
+	private Environment env;
+	
+	@Value("${server.port}")
+	private Integer port;
+	
+	
+	@GetMapping("/clientes")
+	public List<Cliente> getAll(@RequestParam(required = false) String nombre){
+    if (nombre != null && !nombre.isEmpty()) {
+        return clienteService.findByName(nombre);
+    }
+    return clienteService.findAll().stream().map(cliente-> {
+    	cliente.setPort(Integer.parseInt(env.getProperty("local.server.port")));
+		return cliente;
+	}).collect(Collectors.toList());
+	}
+
+    @GetMapping("/clientes/{id}")
+    public Cliente detalleCliente(@PathVariable Long id){
+        Cliente cliente = clienteService.findById(id);
+        try {
+        	Thread.sleep(2000L);
+        	
+        }catch (InterruptedException e) {
+        	e.printStackTrace();
+        }
+            
+        return cliente;
+    }
+    
+    @GetMapping("/clientes/edad/{edad}")
+    public List<Cliente> findByEdad(@PathVariable int edad){
+    	return clienteService.findByEdad(edad);
+    }
+    
+    @PostMapping("/clientes")
+    public Cliente crearCliente(@RequestBody Cliente cliente) {
+        return clienteService.create(cliente);
+    }
+    @PutMapping("/clientes")
+    public Cliente ediCliente(@RequestBody Cliente cliente) {
+    	return clienteService.edit(cliente);
+    }
+    @DeleteMapping("/clientes/{id}")
+    public Cliente delete(@PathVariable Long id) {
+    	return clienteService.delete(id);   
+    	}
+	
+
+}
