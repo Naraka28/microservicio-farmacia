@@ -637,3 +637,6 @@ java.util.concurrent.TimeoutException
 
 !ENTRY org.eclipse.lsp4e 2 0 2025-11-16 16:05:52.112
 !MESSAGE [Warning]	Ignoring CompletionItem without label: {"kind":12,"label":"","insertText":" ","insertTextFormat":2,"documentation":""}
+
+!ENTRY org.eclipse.lsp4e 2 0 2025-11-17 17:29:55.968
+!MESSAGE LS Hover Html and JDT hover html were naively concatenated as LS hover HTML BODY tag wasn't found

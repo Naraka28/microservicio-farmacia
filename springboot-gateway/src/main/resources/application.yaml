@@ -9,7 +9,7 @@ spring:
           filters:
             - StripPrefix=2
         - id: farmacia-productos-service
-          uri: lb://servicio-items
+          uri: lb://farmacia-productos-service
           predicates:
             - Path=/api/productos/**
           filters:
