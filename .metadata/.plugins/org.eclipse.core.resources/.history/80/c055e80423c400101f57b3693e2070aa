@@ -1,0 +1,10 @@
+INSERT INTO ventas (id_cliente, id_productos, fecha_venta, hora_venta, total) VALUES (3, ARRAY[1,4], '2025-11-02', '10:15:00', 112.50);
+INSERT INTO ventas (id_cliente, id_productos, fecha_venta, hora_venta, total) VALUES (7, ARRAY[2], '2025-11-03', '14:20:00', 48.00);
+INSERT INTO ventas (id_cliente, id_productos, fecha_venta, hora_venta, total) VALUES (1, ARRAY[5,7,8], '2025-11-04', '09:05:00', 141.40);
+INSERT INTO ventas (id_cliente, id_productos, fecha_venta, hora_venta, total) VALUES (9, ARRAY[3], '2025-11-06', '16:45:00', 85.00);
+INSERT INTO ventas (id_cliente, id_productos, fecha_venta, hora_venta, total) VALUES (4, ARRAY[6,10], '2025-11-08', '11:30:00', 146.00);
+INSERT INTO ventas (id_cliente, id_productos, fecha_venta, hora_venta, total) VALUES (2, ARRAY[1,2,9], '2025-11-10', '13:10:00', 200.00);
+INSERT INTO ventas (id_cliente, id_productos, fecha_venta, hora_venta, total) VALUES (8, ARRAY[4], '2025-11-12', '17:55:00', 55.00);
+INSERT INTO ventas (id_cliente, id_productos, fecha_venta, hora_venta, total) VALUES (10, ARRAY[3,6], '2025-11-14', '12:40:00', 147.00);
+INSERT INTO ventas (id_cliente, id_productos, fecha_venta, hora_venta, total) VALUES (5, ARRAY[7,8], '2025-11-16', '15:22:00', 95.50);
+INSERT INTO ventas (id_cliente, id_productos, fecha_venta, hora_venta, total) VALUES (6, ARRAY[10], '2025-11-19', '18:05:00', 98.00);

@@ -1,5 +1,22 @@
 package com.app.models.dao;
 
-public interface VentasDao {
+import java.sql.Date;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+import com.app.models.entity.Ventas;
+
+import feign.Param;
+
+public interface VentasDao extends CrudRepository<Ventas, Long>{
+
+    @Query("SELECT v FROM Ventas v WHERE v.fechaVenta = :fechaHoy")
+    List<Ventas> findByVentasHoy(Date fechaHoy);
+    
+//    @Query("SELECT SUM(v.total) FROM Ventas v WHERE v.fechaVenta = :fechaHoy")
+//    Double getTotalVentasHoy(Date fechaHoy);
+    
 
 }
