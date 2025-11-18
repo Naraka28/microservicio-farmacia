@@ -1,0 +1,32 @@
+package com.app.models.entity;
+
+import javax.persistence.AttributeConverter;
+import javax.persistence.Converter;
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
+@Converter
+public class LongArrayConverter implements AttributeConverter<Long[], String> {
+    
+    private static final String DELIMITER = ",";
+    
+    @Override
+    public String convertToDatabaseColumn(Long[] attribute) {
+        if (attribute == null || attribute.length == 0) {
+            return "";
+        }
+        return Arrays.stream(attribute)
+                .map(String::valueOf)
+                .collect(Collectors.joining(DELIMITER));
+    }
+    
+    @Override
+    public Long[] convertToEntityAttribute(String dbData) {
+        if (dbData == null || dbData.isEmpty()) {
+            return new Long[0];
+        }
+        return Arrays.stream(dbData.split(DELIMITER))
+                .map(Long::parseLong)
+                .toArray(Long[]::new);
+    }
+}

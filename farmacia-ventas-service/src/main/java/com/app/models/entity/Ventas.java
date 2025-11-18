@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.sql.Time;
 
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,8 +23,10 @@ public class Ventas {
     @Column(name = "id_cliente")
     private Long idCliente;
 
+    @Convert(converter = LongArrayConverter.class)
     @Column(name = "id_productos")
     private Long[] idProductos;
+    
 
     @Column(name = "fecha_venta")
     private Date fechaVenta;
